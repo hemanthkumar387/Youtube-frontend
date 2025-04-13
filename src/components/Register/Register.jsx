@@ -8,9 +8,8 @@ const Register = () => {
     username: "",
     email: "",
     password: "",
-    avatar: ""
+    avatar: "" // Optional field for profile picture URL
   });
-  const [avatar, setAvatar] = useState(null);
 
   // State for error and success messages
   const [error, setError] = useState("");
@@ -23,21 +22,9 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFileChange = (e) => {
-    setAvatar(e.target.files[0]);
-  };
-
   // Handles form submission
   const handleRegister = async (e) => {
     e.preventDefault(); // Prevent page refresh
-
-    const form = new FormData();
-    form.append("username", formData.username);
-    form.append("email", formData.email);
-    form.append("password", formData.password);
-    if (avatar) {
-      form.append("avatar", avatar); // Append file to FormData
-    }
 
     try {
       const res = await fetch("https://youtube-backend-wjcl.onrender.com/api/auth/register", {
@@ -101,15 +88,12 @@ const Register = () => {
           autoComplete="new-password"
         />
 
-
-        <label htmlFor="avatar" className="avatar-label">Profile</label>
-
         {/* Optional avatar URL input */}
         <input
-          type="file"
+          type="text"
           name="avatar"
-          accept="image/*"
-          onChange={handleFileChange}
+          placeholder="Avatar URL (optional)"
+          onChange={handleChange}
         />
 
         {/* Display error or success messages */}
