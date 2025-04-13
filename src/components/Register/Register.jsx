@@ -99,6 +99,7 @@ const Register = () => {
           onChange={handleChange}
           autoComplete="new-password"
         />
+        <label htmlFor="avatar">Profile</label>
 
         {/* Optional avatar URL input */}
         <input
