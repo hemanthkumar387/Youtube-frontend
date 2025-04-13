@@ -1,0 +1,61 @@
+/* Container for the category buttons */
+.category-bar {
+    position: fixed;
+    top: 54px;
+    left: 0;
+    right: 0;
+    padding: 10px 16px;
+    background-color: #f9f9f9;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 12px;
+    scrollbar-width: none;
+    z-index: 999;
+    transition: margin-left 0.3s ease;
+}
+
+/* Hides scrollbar in WebKit browsers */
+.category-bar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Default styling for each category button */
+.category-item {
+    background-color: #e5e5e5;
+    border: none;
+    border-radius: 18px;
+    padding: 6px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover state for buttons */
+.category-item:hover {
+    background-color: #d4d4d4;
+}
+
+/* Active (selected) category button */
+.category-item.active {
+    background-color: #000;
+    color: white;
+}
+
+/* Shift category bar when sidebar is open */
+.app-wrapper.sidebar-open .category-bar {
+    margin-left: 240px;
+}
+
+/* Shift category bar when sidebar is closed */
+.app-wrapper.sidebar-closed .category-bar {
+    margin-left: 72px;
+}
+
+/* Responsive styling for smaller screens (max-width 768px) */
+@media(max-width:768px) {
+    .category-bar {
+        margin-left: 0 !important;
+        top: 44px;
+    }
+}

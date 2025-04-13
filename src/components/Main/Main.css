@@ -1,0 +1,12 @@
+/* Reset default margin and padding for all elements */
+/* Ensure consistent box sizing across the application */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a global font style for the application */
+body {
+    font-family: Arial, sans-serif;
+}

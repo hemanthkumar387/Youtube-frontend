@@ -1,0 +1,164 @@
+/* Main wrapper for the comment section */
+.comments-section {
+  color: rgb(0, 0, 0);
+  padding: 1rem;
+  max-width: 900px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Title style */
+.comments-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Container for comment input section */
+.add-comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Styling for textarea input */
+.add-comment textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-bottom: 1px solid black;
+  color: rgb(0, 0, 0);
+  font-size: 0.95rem;
+  min-height: 60px;
+}
+
+/* Styling for 'Post' button */
+.add-comment button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  align-self: flex-end;
+  font-weight: 500;
+}
+
+/* List of all comments */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Individual comment item container */
+.comment-item {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Avatar image */
+.comment-item img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Wrapper for comment content */
+.comment-content {
+  flex: 1;
+}
+
+/* Header of a comment (e.g. username) */
+.comment-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.87rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Username text styling */
+.username {
+  font-weight: 500;
+  color: #f1f1f1;
+}
+
+/* Paragraph inside comment content */
+.comment-content p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #000000;
+}
+
+/* Action buttons (like, edit, delete) */
+.comment-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+/* Individual action button */
+.comment-actions button {
+  background: none;
+  border: none;
+  color: #5a5a5a;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+/* Hover effect on buttons */
+.comment-actions button:hover {
+  color: rgb(0, 0, 0);
+}
+
+/* Textarea for editing comment */
+.comment-content textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  resize: none;
+  font-size: 0.95rem;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 600px) {
+  .comments-section {
+    padding: 0.8rem;
+  }
+
+  /* Stack avatar and textarea on small screens */
+  .add-comment {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .add-comment img {
+    align-self: flex-start;
+  }
+
+  .add-comment button {
+    align-self: flex-end;
+  }
+
+  /* Stack username and time vertically */
+  .comment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  /* Wrap comment actions */
+  .comment-actions {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+}

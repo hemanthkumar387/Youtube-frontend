@@ -1,0 +1,286 @@
+/* Main container layout */
+.videoPage-main {
+  display: flex;
+  padding: 16px;
+  gap: 24px;
+  margin: 61px 80px;
+  flex-wrap: wrap; /* Wraps on smaller screens */
+}
+
+/* Video player section takes more space than sidebar */
+.videoPage-video-section {
+  flex: 2.5;
+  min-width: 0;
+}
+
+/* Video element styling */
+.videoPage-videoPlayer video {
+  width: 100%;
+  border-radius: 12px;
+  background-color: #222;
+}
+
+/* Video title */
+.videoPage-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 16px 0 12px;
+  color: rgb(0, 0, 0);
+}
+
+/* Description area below the video */
+.videoPage-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #3c3c3c;
+  background-color: #f1f1f1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Channel row under the video */
+.videoPage-channelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Left side of the channel info (avatar + text) */
+.videoPage-channel-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Channel avatar */
+.videoPage-channel-img img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+/* Text info (channel name, subscriber count) */
+.videoPage-channel-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Channel name and verified icon */
+.videoPage-channel-name {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Verified icon color */
+.videoPage-verified-icon {
+  color: #3ea6ff;
+}
+
+/* Subscriber count text */
+.videoPage-subscribers {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Subscribe/Unsubscribe button */
+.videoPage-subscribeBtn {
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 16px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Like/Dislike/Share/Download buttons */
+.videoPage-actionBar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Individual action button */
+.videoPage-actionBtn {
+  background-color: #272727;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Sidebar container for suggested videos */
+.videoPage-sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  min-width: 300px;
+}
+
+/* Each suggested video block */
+.videoPage-suggestion {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Thumbnail inside each suggested video */
+.videoPage-thumbnail img {
+  width: 200px;
+  height: 100px;
+  background-color: #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Text info beside the thumbnail */
+.videoPage-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}
+
+.videoPage-info strong {
+  margin-bottom: 8px;
+}
+
+/* Meta info (views, time) */
+.videoPage-meta {
+  color: #7a7a7a;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* Tablet breakpoint */
+@media(max-width: 1024px) {
+  .videoPage-main {
+    margin: 61px 70px;
+    flex-direction: column;
+  }
+
+  .videoPage-sidebar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    padding-top: 16px;
+  }
+
+  .videoPage-suggestion {
+    display: block;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .videoPage-thumbnail img {
+    width: 100%;
+    height: 155px;
+    object-fit: fill;
+  }
+
+  .videoPage-info {
+    padding: 8px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+  }
+
+  .videoPage-info strong {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .videoPage-meta {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+}
+
+/* Mobile breakpoint */
+@media(max-width: 768px) {
+  .videoPage-main {
+    margin: 61px 30px;
+    flex-direction: column;
+  }
+
+  .videoPage-channelRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .videoPage-actionBar {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .videoPage-sidebar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .videoPage-suggestion {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Small mobile devices */
+@media(max-width: 480px) {
+  .videoPage-main {
+    margin: 40px 0px;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .videoPage-sidebar {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .videoPage-thumbnail img {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+  }
+
+  .videoPage-meta {
+    font-size: 11px;
+  }
+
+  .videoPage-title {
+    font-size: 20px;
+  }
+
+  .videoPage-subscribeBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .videoPage-actionBtn {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}

@@ -1,0 +1,256 @@
+/* Navbar container styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    /* Stick the navbar to the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    /* Keep above other elements */
+}
+
+/* Flex containers for each navbar section */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo image styling */
+.logo {
+    height: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* General button/icon styles */
+.menu-icon,
+.mic-button,
+.signin-button,
+.mobile-search-icon,
+.back-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px;
+    color: #333;
+}
+
+/* Hover effect for sidebar menu icon */
+.menu-icon:hover {
+    background-color: #dfdfdf;
+    border-radius: 25px;
+}
+
+/* Search input styling */
+.search-input {
+    padding: 8px 12px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 40px 0 0 40px;
+    border-right: none;
+    outline: none;
+}
+
+/* Search button styling */
+.search-button {
+    padding: 8px 16px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 40px 40px 0;
+    cursor: pointer;
+}
+
+/* Sign-in button with blue outline and bold text */
+.signin-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border: 1px solid #3ea6ff;
+    border-radius: 18px;
+    color: #3ea6ff;
+    font-weight: bold;
+}
+
+/* Hide mobile search icon by default */
+.mobile-search-icon {
+    display: none;
+}
+
+/* Back button for search view */
+.back-button {
+    display: none;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Utility class to hide/show based on screen size */
+.desktop-only {
+    display: block;
+}
+
+/* Container for avatar and dropdown */
+.user-avatar-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    gap: 8px;
+}
+
+/* User profile image styling */
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    transition: border 0.2s ease;
+}
+
+/* Avatar hover effect */
+.avatar:hover {
+    border-color: #3ea6ff;
+}
+
+/* Desktop-only username label */
+.username-desktop {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #202020;
+    display: none;
+    white-space: nowrap;
+}
+
+/* Dropdown menu for profile actions */
+.dropdown-menu {
+    position: absolute;
+    top: 48px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+/* Dropdown buttons */
+.dropdown-menu button {
+    background: none;
+    border: none;
+    padding: 8px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background 0.2s;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-menu button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Username in dropdown */
+.dropdown-username {
+    font-weight: bold;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+}
+
+/* Mobile-only username visibility */
+.username-mobile-only {
+    display: none;
+}
+
+/* Show desktop username on wider screens */
+@media screen and (min-width: 768px) {
+    .username-desktop {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+/* Tablet and small laptop styles */
+@media(max-width:768px) {
+    .navbar {
+        padding: 5px 8px;
+    }
+
+    .logo {
+        height: 18px;
+        margin-left: 0px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    .username-mobile-only {
+        display: block;
+    }
+}
+
+/* Mobile responsive styles */
+@media(max-width:480px) {
+    .signin-button {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+
+    .navbar-center {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 5px;
+        background-color: white;
+        display: none;
+        z-index: 100;
+    }
+
+    .navbar-center.show {
+        display: flex;
+        justify-content: start;
+    }
+
+    .navbar-left,
+    .navbar-right {
+        display: flex;
+    }
+
+    .navbar.show-search .navbar-left,
+    .navbar.show-search .navbar-right {
+        display: none;
+    }
+
+    .mobile-search-icon {
+        display: block;
+        font-size: 14px;
+    }
+
+    .navbar-center.show .back-button {
+        display: block;
+    }
+}

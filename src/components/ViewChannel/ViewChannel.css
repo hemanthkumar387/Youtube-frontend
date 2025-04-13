@@ -1,0 +1,336 @@
+/* Main container for the channel page with bottom padding for spacing */
+.channel-container {
+    padding-bottom: 80px;
+    margin: 61px 72px;
+}
+
+/* Banner image styling for the channel */
+.channel-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Container for the channel profile section (profile image and details) */
+.channel-profile-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Channel profile image styles (circular and sized) */
+.channel-profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Container for channel videos section */
+.channel-videos-section {
+    padding: 20px;
+}
+
+/* Header area above the videos list with space-between alignment */
+.channel-videos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* "Add Video" button styling, including hover and pointer interaction */
+.channel-add-video {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #1a73e8;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 2px 0px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+/* Modal overlay styling for video upload/edit modal */
+.channel-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content styling with padding and maximum width for larger screens */
+.channel-modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Styles for input and textarea elements in the modal form */
+.channel-modal-form input,
+.channel-modal-form textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Container for form action buttons (Upload and Cancel) with right alignment */
+.channel-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Common button styling for the modal form actions */
+.channel-form-actions button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #1a73e8;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Style override for the cancel button in the modal form (different color) */
+.channel-form-actions button:last-child {
+    background-color: #999;
+}
+
+/* Grid layout for channel video cards */
+.channel-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 16px 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Message styling when no videos are found */
+.channel-no-videos-message {
+    font-size: 1.2rem;
+    color: #949494;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Individual channel video card styling with hover effect */
+.channel-video-card {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.channel-video-card:hover {
+    transform: scale(1.02);
+}
+
+/* Video frame for each video card maintaining a 16:9 aspect ratio */
+.channel-video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Duration badge overlay in the bottom-right corner of the video frame */
+.channel-video-duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Thumbnail image styling for channel videos */
+.channel-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Container for video information (avatar and meta data) below the video frame */
+.channel-video-info {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* Channel avatar styling in video info section */
+.channel-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ddd;
+    flex-shrink: 0;
+}
+
+/* Container for textual video meta information arranged vertically */
+.channel-video-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Video title styling */
+.channel-video-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f0f0f;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Channel name and video statistics styling */
+.channel-name,
+.channel-video-stats {
+    font-size: 13px;
+    color: #606060;
+    margin: 2px 0;
+}
+
+/* Styling for the select dropdown in the modal form */
+.channel-modal-form select {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 12px 0;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #000000;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Change border color on select focus */
+.channel-modal-form select:focus {
+    border-color: #000000;
+}
+
+/* Option styling for the dropdown */
+.channel-modal-form option {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Container for the video options (e.g., edit and delete) in each video card */
+.video-options-container {
+    position: absolute;
+    display: inline-block;
+    margin-left: auto;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Button for showing video options */
+.video-options-btn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover effect for the video options button */
+.video-options-btn:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Dropdown menu styling for video options */
+.video-dropdown {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    min-width: 120px;
+}
+
+/* Styling for items in the dropdown */
+.dropdown-item {
+    padding: 10px 14px;
+    font-size: 14px;
+    background: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: #f7f7f7;
+}
+
+/* Specific style for the delete dropdown item (red text) */
+.dropdown-item.delete {
+    color: red;
+}
+
+/* Responsive settings for tablets and smaller screens */
+@media (max-width: 768px) {
+
+    /* Adjust container margins for smaller screens */
+    .channel-container {
+        margin: 0px 0px;
+        margin-top: 51px;
+    }
+
+    /* Adjust grid layout of video cards for smaller screens */
+    .channel-video-grid {
+        margin: 0px 0px;
+        padding: 8px 10px;
+    }
+
+    /* Reduce padding in videos section */
+    .channel-videos-section {
+        padding: 2px;
+    }
+
+    /* Set a fixed height for video frames */
+    .channel-video-frame {
+        height: 180px;
+    }
+
+    /* Increase padding in the header for the videos section */
+    .channel-videos-header {
+        padding: 20px;
+    }
+}
+
+/* Extra styles for profile and modal responsiveness on very small screens */
+@media(max-width:480px) {
+    .channel-profile-section {
+        flex-direction: column;
+        align-items: start;
+    }
+}
