@@ -264,8 +264,8 @@
 /* Dropdown menu styling for video options */
 .video-dropdown {
     position: absolute;
-    top: 28px;
-    right: 0;
+    top: -77px;
+    right: 8px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 6px;
