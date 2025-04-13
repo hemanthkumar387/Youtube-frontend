@@ -21,7 +21,7 @@ const CommentSection = ({ videoId, user }) => {
     if (!newComment.trim()) return; // Prevent posting empty comments
     try {
       const token = localStorage.getItem("token"); // Get auth token from localStorage
-      const res = await fetch(`http://localhost:5000/api/comments`, {
+      const res = await fetch(`https://youtube-backend-wjcl.onrender.com/api/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const CommentSection = ({ videoId, user }) => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`http://localhost:5000/api/comments/${id}`, {
+      await fetch(`https://youtube-backend-wjcl.onrender.com/api/comments/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ const CommentSection = ({ videoId, user }) => {
   const handleUpdate = async (id, updatedComment) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/comments/${id}`, {
+      const res = await fetch(`https://youtube-backend-wjcl.onrender.com/api/comments/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
