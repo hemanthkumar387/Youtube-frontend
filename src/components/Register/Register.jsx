@@ -8,6 +8,7 @@ const Register = () => {
     username: "",
     email: "",
     password: "",
+    avatar: ""
   });
   const [avatar, setAvatar] = useState(null);
 
@@ -100,7 +101,7 @@ const Register = () => {
           autoComplete="new-password"
         />
 
-        
+
         <label htmlFor="avatar" className="avatar-label">Profile</label>
 
         {/* Optional avatar URL input */}
